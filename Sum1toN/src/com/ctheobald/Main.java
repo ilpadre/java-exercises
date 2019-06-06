@@ -24,7 +24,7 @@ public class Main {
 
     public static int getTotalSum (int firstNumber) {
         int totalSum = 0;
-        for (int i = 1; i < firstNumber; i++) {
+        for (int i = 1; i <= firstNumber; i++) {
             if (i % 3 == 0 || i % 5 == 0) {
                 totalSum += i;
                 System.out.println(i);
