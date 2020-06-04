@@ -1,13 +1,8 @@
 package com.example.ctheobald;
 
-import java.util.Arrays;
-
 public class BinarySearch {
 
-    public static int binarySearch(int value, int[] sortedArray) {
-
-        int lowerBound = 0;
-        int upperBound = sortedArray.length;
+    public static int binarySearch(int value, int[] sortedArray, int lowerBound, int upperBound) {
 
         if (upperBound <= lowerBound) {
             return -1;
@@ -21,7 +16,7 @@ public class BinarySearch {
                 upperBound = midPoint;
             }
             if (sortedArray[midPoint] == value) {
-                System.out.println(value + " found at location " + midPoint);
+                //System.out.println(value + " found at index " + midPoint);
                 return midPoint;
             }
 
@@ -29,7 +24,7 @@ public class BinarySearch {
                 System.out.println("Value does not exist in array.");
                 return -1;
             }
-            return binarySearch(value, Arrays.copyOfRange(sortedArray, lowerBound, upperBound));
+            return binarySearch(value, sortedArray, lowerBound, upperBound);
         }
     }
 }
